@@ -31,12 +31,12 @@ class Database extends Config
      * @var array
      */
     public $default = [
-        'DSN'      => '',
+        'DSN' => '',
         'hostname' => 'localhost',
-        'username' => '',
-        'password' => '',
-        'database' => '',
-        'DBDriver' => 'MySQLi',
+        'username' => 'postgres',
+        'password' => '1',
+        'database' => 'traveling',
+        'DBDriver' => 'postgre',
         'DBPrefix' => '',
         'pConnect' => false,
         'DBDebug'  => (ENVIRONMENT !== 'production'),
@@ -47,8 +47,28 @@ class Database extends Config
         'compress' => false,
         'strictOn' => false,
         'failover' => [],
-        'port'     => 3306,
+        'port'     => 5433,
+
     ];
+//    public $default = [
+//        'DSN'      => '',
+//        'hostname' => 'localhost',
+//        'username' => 'root',
+//        'password' => '',
+//        'database' => 'test_db',
+//        'DBDriver' => 'MySQLi',
+//        'DBPrefix' => '',
+//        'pConnect' => false,
+//        'DBDebug'  => (ENVIRONMENT !== 'production'),
+//        'charset'  => 'utf8',
+//        'DBCollat' => 'utf8_general_ci',
+//        'swapPre'  => '',
+//        'encrypt'  => false,
+//        'compress' => false,
+//        'strictOn' => false,
+//        'failover' => [],
+//        'port'     => 3306,
+//    ];
 
     /**
      * This database connection is used when

@@ -125,3 +125,11 @@ nb-configuration.xml
 /phpunit*.xml
 /.phpunit.*.cache
 
+# Codeigniter
+
+.env
+env
+
+# Собственные файлы
+
+Вспомогательные/
