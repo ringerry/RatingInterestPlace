@@ -4,18 +4,22 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class CityModel extends Model
+class DeveloperModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'city_town';
+    protected $table            = 'developer';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [
-        'name',
+    protected $allowedFields = [
+        'email',
+        'password',
+        'firstname',
+        'lastname',
+        'patronymic',
     ];
 
     // Dates

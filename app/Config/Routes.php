@@ -27,7 +27,20 @@ $routes->get('BasicController', 'BasicController::index');
 $routes->group("api", function ($routes) {
     $routes->post("register", "Register::index");
     $routes->post("login", "Login::index");
+    //$routes->get("users", "City::User::index", ['filter' => 'authFilter']);
+});
+
+
+$routes->setDefaultNamespace("App\Controllers\City");
+$routes->group("api", function ($routes) {
     $routes->get("users", "User::index", ['filter' => 'authFilter']);
+});
+
+
+$routes->setDefaultNamespace("App\Controllers\City");
+$routes->group("api", function ($routes) {
+    $routes->get("users", "User::index", ['filter' => 'authFilter']);
+    $routes->post("city", "Create::index", ['filter' => 'authFilter']);
 });
 
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
