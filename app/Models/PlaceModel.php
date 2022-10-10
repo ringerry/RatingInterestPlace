@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class PlaceModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'places';
+    protected $table            = 'place';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;

@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class CityModel extends Model
+class CityUserModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'city_town';
+    protected $table            = 'city_town_user';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;

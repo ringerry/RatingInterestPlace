@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class TravelerModel extends Model
+class PlaceUserModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'travelers';
+    protected $table            = 'place_user';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
