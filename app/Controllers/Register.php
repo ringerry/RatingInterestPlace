@@ -13,9 +13,6 @@ class Register extends BaseController
 
     public function index()
     {
-
-
-
         $rules = [
             'email' => ['rules' => 'required|min_length[4]|max_length[255]|valid_email|is_unique[user.email]'],
             'password' => ['rules' => 'required|min_length[8]|max_length[255]'],
