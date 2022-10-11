@@ -35,7 +35,8 @@ class Login extends BaseController
 
         $key = getenv('JWT_SECRET');
         $iat = time();
-        $exp = $iat + 5400;
+        //$exp = $iat + 5400;
+        $exp = $iat + 540000000;
 
         $payload = array(
             "iss" => "Issuer of the JWT",
