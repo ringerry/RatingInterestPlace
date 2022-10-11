@@ -3,11 +3,12 @@
 namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
+use App\Controllers\RootController;
 use App\Models\UserModel;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-class BasicUser extends BaseController
+class BasicUser extends RootController
 {
     protected function GetUserId()
     {
@@ -26,7 +27,7 @@ class BasicUser extends BaseController
         return $modelU->where('email',$decoded['email'])->first()['id'];
     }
 
-    protected function index()
+    public function index()
     {
         //
     }
