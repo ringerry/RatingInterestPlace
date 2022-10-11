@@ -14,7 +14,11 @@ class PlaceUserModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'user_rating',
+        'place_id',
+        'user_id',
+    ];
 
     // Dates
     protected $useTimestamps = false;

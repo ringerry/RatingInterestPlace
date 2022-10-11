@@ -54,6 +54,13 @@ $routes->group("api", function ($routes) {
     $routes->delete("place", "Delete::index", ['filter' => 'authFilter']);
 });
 
+$routes->setDefaultNamespace("App\Controllers\User");
+$routes->group("api", function ($routes) {
+    $routes->post("rating", "Rating::index", ['filter' => 'authFilter']);
+//    $routes->get("place", "Read::index", ['filter' => 'authFilter']);
+//    $routes->put("place", "Update::index", ['filter' => 'authFilter']);
+//    $routes->delete("place", "Delete::index", ['filter' => 'authFilter']);
+});
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).

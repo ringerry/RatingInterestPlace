@@ -18,15 +18,35 @@ class Create extends BaseController
         ];
 
         try {
-            $model = new CityModel();
-            $data = [
-                'name'    => $this->request->getVar('name'),
+            $rules = [
+                'name' => ['rules' => 'required'],
             ];
-            $model->save($data);
 
-            $res["message"] = "Город ".$data['name']." добавлен.";
+            if($this->validate($rules))
+            {
+                $model = new CityModel();
+                $data = [
+                    'name'    => $this->request->getVar('name'),
+                ];
 
-            return $this->respond($res, 200);
+                $id = $model->insert($data);
+
+                $res = [
+                    'message' => "Город ".$data['name']." добавлен.",
+                    'id' => $id,
+                ];
+
+                return $this->respond($res, 200);
+            }
+            else
+            {
+                $response = [
+                    'errors' => $this->validator->getErrors(),
+                    'message' => 'Данные ошибочны.'
+                ];
+                return $this->fail($response , 409);
+            }
+
         }
         catch (\Exception $e)
         {

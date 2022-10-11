@@ -43,9 +43,12 @@ class Create extends BaseController
                     'city_town_id'    => $this->request->getVar('city_id'),
                 ];
 
-                $model->insert($data1);
+                $id = $model->insert($data1);
 
-                $res['message'] = "Достопримечательность ".$data['name']." добавлена.";
+                $res = [
+                    'message' => "Достопримечательность ".$data['name']." добавлена.",
+                    'id' => $id,
+                ];
 
                 return $this->respond($res, 200);
             }
