@@ -2,13 +2,13 @@
 
 namespace App\Controllers\Place;
 
-use App\Controllers\BaseControllerAbstract;
+use App\Controllers\BaseController;
 use App\Models\CityModel;
 use App\Models\PlaceCityModel;
 use App\Models\PlaceModel;
 use CodeIgniter\API\ResponseTrait;
 
-class Delete extends BaseControllerAbstract
+class Delete extends BaseController
 {
     use ResponseTrait;
 

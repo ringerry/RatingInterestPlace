@@ -6,7 +6,7 @@ namespace App\Controllers;
 
 use App\Models\TestModel;
 
-class BasicController extends BaseControllerAbstract
+class BasicController extends BaseController
 {
     public function index()
     {

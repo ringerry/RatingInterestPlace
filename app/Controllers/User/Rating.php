@@ -2,7 +2,7 @@
 
 namespace App\Controllers\User;
 
-use App\Controllers\BaseControllerAbstract;
+use App\Controllers\BaseController;
 use App\Models\CityUserModel;
 use App\Models\DeveloperModel;
 use App\Models\PlaceCityModel;

@@ -2,12 +2,12 @@
 
 namespace App\Controllers\User;
 
-use App\Controllers\BaseControllerAbstract;
+use App\Controllers\BaseController;
 use App\Models\UserModel;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-class BasicUser extends BaseControllerAbstract
+class BasicUser extends BaseController
 {
     protected function GetUserId()
     {
