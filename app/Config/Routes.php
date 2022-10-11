@@ -27,23 +27,18 @@ $routes->get('BasicController', 'BasicController::index');
 $routes->group("api", function ($routes) {
     $routes->post("register", "Register::index");
     $routes->post("login", "Login::index");
-    //$routes->get("users", "City::User::index", ['filter' => 'authFilter']);
 });
 
 
 $routes->setDefaultNamespace("App\Controllers\City");
 $routes->group("api", function ($routes) {
-    $routes->get("users", "User::index", ['filter' => 'authFilter']);
-});
-
-
-$routes->setDefaultNamespace("App\Controllers\City");
-$routes->group("api", function ($routes) {
-    //$routes->get("users", "User::index", ['filter' => 'authFilter']);
     $routes->post("city", "Create::index", ['filter' => 'authFilter']);
     $routes->get("city", "Read::index", ['filter' => 'authFilter']);
     $routes->put("city", "Update::index", ['filter' => 'authFilter']);
     $routes->delete("city", "Delete::index", ['filter' => 'authFilter']);
+
+    $routes->get("city/users", "UsersByCity::index", ['filter' => 'authFilter']);
+    $routes->get("city/places", "PlacesByCity::index", ['filter' => 'authFilter']);
 });
 
 $routes->setDefaultNamespace("App\Controllers\Place");
@@ -57,6 +52,11 @@ $routes->group("api", function ($routes) {
 $routes->setDefaultNamespace("App\Controllers\User");
 $routes->group("api", function ($routes) {
     $routes->post("rating", "Rating::index", ['filter' => 'authFilter']);
+    $routes->get("users", "User::index", ['filter' => 'adminFilter']);
+
+    $routes->get("user/cities", "CitiesByUser::index", ['filter' => 'adminFilter']);
+
+
 //    $routes->get("place", "Read::index", ['filter' => 'authFilter']);
 //    $routes->put("place", "Update::index", ['filter' => 'authFilter']);
 //    $routes->delete("place", "Delete::index", ['filter' => 'authFilter']);

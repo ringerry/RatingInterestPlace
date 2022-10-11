@@ -2,14 +2,14 @@
 
 namespace App\Filters;
 
+use App\Models\DeveloperModel;
 use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
-use Exception;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-class AuthFilter implements FilterInterface
+class AdminFilter implements FilterInterface
 {
     /**
      * Do whatever processing this filter needs to do.
@@ -49,7 +49,18 @@ class AuthFilter implements FilterInterface
 
         try {
             // $decoded = JWT::decode($token, $key, array("HS256"));
-            $decoded = JWT::decode($token, new Key($key, 'HS256'));
+            $decoded = (array)JWT::decode($token, new Key($key, 'HS256'));
+
+            $model = new DeveloperModel();
+            $dev = $model->where('email',$decoded['email'])->first();
+            if(is_null($dev))
+            {
+                $response = service('response');
+                $response->setBody('Доступ закрыт.');
+                $response->setStatusCode(401);
+                return $response;
+            }
+
         } catch (Exception $ex) {
             $response = service('response');
             $response->setBody('Доступ закрыт.');

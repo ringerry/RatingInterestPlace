@@ -4,6 +4,7 @@ namespace App\Controllers\User;
 
 use App\Controllers\BaseController;
 use App\Models\CityUserModel;
+use App\Models\DeveloperModel;
 use App\Models\PlaceCityModel;
 use App\Models\PlaceModel;
 use App\Models\PlaceUserModel;
@@ -20,6 +21,7 @@ class Rating extends BaseController
 
     private function UpdateCities()
     {
+
 
         $modelPS = new PlaceCityModel();
         $cityId = $modelPS->where('place_id',$this->request->getVar('place_id'))->first()['city_town_id'];
