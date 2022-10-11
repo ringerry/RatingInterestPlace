@@ -33,7 +33,6 @@ class Delete extends BaseController
 
             if(is_null($id))
             {
-                $res["id"]=564;
                 $city = $model->where('name',$this->request->getVar('name'))->first();
                 if(is_null($city))
                 {

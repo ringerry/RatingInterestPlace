@@ -14,7 +14,10 @@ class PlaceCityModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'place_id',
+        'city_town_id'
+    ];
 
     // Dates
     protected $useTimestamps = false;
