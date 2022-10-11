@@ -56,10 +56,8 @@ $routes->group("api", function ($routes) {
 
     $routes->get("user/cities", "CitiesByUser::index", ['filter' => 'authFilter']);
 
-
-//    $routes->get("place", "Read::index", ['filter' => 'authFilter']);
-//    $routes->put("place", "Update::index", ['filter' => 'authFilter']);
-//    $routes->delete("place", "Delete::index", ['filter' => 'authFilter']);
+    $routes->put("user", "Update::index", ['filter' => 'authFilter']);
+    $routes->delete("user", "Delete::index", ['filter' => 'authFilter']);
 });
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
 // where controller filters or CSRF protection are bypassed.

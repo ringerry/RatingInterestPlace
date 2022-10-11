@@ -3,11 +3,12 @@
 namespace App\Controllers\City;
 
 use App\Controllers\BaseController;
+use App\Controllers\RootController;
 use App\Models\CityModel;
 use CodeIgniter\API\ResponseTrait;
 use function PHPUnit\Framework\throwException;
 
-class Delete extends BaseController
+class Delete extends RootController
 {
     use ResponseTrait;
 
@@ -19,7 +20,6 @@ class Delete extends BaseController
         }
 
         $model->delete($id);
-
     }
 
     public function index()

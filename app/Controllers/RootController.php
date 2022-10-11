@@ -19,6 +19,17 @@ class RootController extends BaseController
         return $data;
     }
 
+    protected function delete($model,$id)
+    {
+        if(is_null($model->where('id',$id)->first()))
+        {
+            throw new \Exception("Сущности с id " . $id . " не существует.");
+        }
+
+        $model->delete($id);
+    }
+
+
     public function index()
     {
         //
