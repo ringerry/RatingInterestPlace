@@ -2,7 +2,7 @@
 
 namespace App\Controllers\User;
 
-use App\Controllers\BaseController;
+use App\Controllers\BaseControllerAbstract;
 use App\Models\CityUserModel;
 use App\Models\DeveloperModel;
 use App\Models\PlaceCityModel;
@@ -13,7 +13,7 @@ use CodeIgniter\API\ResponseTrait;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-class Rating extends BaseController
+class Rating extends BasicUser
 {
     use ResponseTrait;
 
@@ -85,22 +85,22 @@ class Rating extends BaseController
         }
     }
 
-    private function GetUserId()
-    {
-        $key = getenv('JWT_SECRET');
-        $header = $this->request->getHeader("Authorization");
-        $token = null;
-
-        if (preg_match('/Bearer\s(\S+)/', $header, $matches)) {
-            $token = $matches[1];
-        }
-
-        $decoded = (array)JWT::decode($token, new Key($key, 'HS256'));
-
-        $modelU = new UserModel();
-
-        return $modelU->where('email',$decoded['email'])->first()['id'];
-    }
+//    private function GetUserId()
+//    {
+//        $key = getenv('JWT_SECRET');
+//        $header = $this->request->getHeader("Authorization");
+//        $token = null;
+//
+//        if (preg_match('/Bearer\s(\S+)/', $header, $matches)) {
+//            $token = $matches[1];
+//        }
+//
+//        $decoded = (array)JWT::decode($token, new Key($key, 'HS256'));
+//
+//        $modelU = new UserModel();
+//
+//        return $modelU->where('email',$decoded['email'])->first()['id'];
+//    }
 
     public function index()
     {

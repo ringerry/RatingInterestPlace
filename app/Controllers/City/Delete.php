@@ -2,12 +2,12 @@
 
 namespace App\Controllers\City;
 
-use App\Controllers\BaseController;
+use App\Controllers\BaseControllerAbstract;
 use App\Models\CityModel;
 use CodeIgniter\API\ResponseTrait;
 use function PHPUnit\Framework\throwException;
 
-class Delete extends BaseController
+class Delete extends BaseControllerAbstract
 {
     use ResponseTrait;
 

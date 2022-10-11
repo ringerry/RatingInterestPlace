@@ -2,12 +2,12 @@
 
 namespace App\Controllers\City;
 
-use App\Controllers\BaseController;
+use App\Controllers\BaseControllerAbstract;
 use App\Models\PlaceCityModel;
 use App\Models\PlaceModel;
 use CodeIgniter\API\ResponseTrait;
 
-class PlacesByCity extends BaseController
+class PlacesByCity extends BaseControllerAbstract
 {
     use ResponseTrait;
 

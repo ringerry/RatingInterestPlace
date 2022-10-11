@@ -4,13 +4,13 @@ namespace App\Controllers;
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
+use App\Controllers\BaseControllerAbstract;
 use App\Models\DeveloperModel;
 use CodeIgniter\API\ResponseTrait;
 use App\Models\UserModel;
 use \Firebase\JWT\JWT;
 
-class Login extends BaseController
+class Login extends BaseControllerAbstract
 {
     use ResponseTrait;
 

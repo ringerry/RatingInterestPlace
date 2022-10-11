@@ -2,11 +2,11 @@
 
 namespace App\Controllers\User;
 
-use App\Controllers\BaseController;
+use App\Controllers\BaseControllerAbstract;
 use CodeIgniter\API\ResponseTrait;
 use App\Models\UserModel;
 
-class User extends BaseController
+class User extends BasicUser
 {
     use ResponseTrait;
 

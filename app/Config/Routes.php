@@ -54,7 +54,7 @@ $routes->group("api", function ($routes) {
     $routes->post("rating", "Rating::index", ['filter' => 'authFilter']);
     $routes->get("users", "User::index", ['filter' => 'adminFilter']);
 
-    $routes->get("user/cities", "CitiesByUser::index", ['filter' => 'adminFilter']);
+    $routes->get("user/cities", "CitiesByUser::index", ['filter' => 'authFilter']);
 
 
 //    $routes->get("place", "Read::index", ['filter' => 'authFilter']);

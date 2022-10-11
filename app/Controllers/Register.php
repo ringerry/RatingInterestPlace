@@ -2,13 +2,13 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
+use App\Controllers\BaseControllerAbstract;
 use App\Models\DeveloperModel;
 use CodeIgniter\API\ResponseTrait;
 use App\Models\UserModel;
 
 
-class Register extends BaseController
+class Register extends BaseControllerAbstract
 {
     use ResponseTrait;
 
